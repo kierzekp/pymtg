@@ -1,16 +1,22 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from card import Card, ManaPoint, Color, CardType, CardRarity
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def create_jungle_delver():
+    return Card("Jungle Delver", [ManaPoint([Color.GREEN])], [CardType.PERMANENT_CREATURE], CardRarity.COMMON)
 
 
-# Press the green button in the gutter to run the script.
+def create_hydras_growth():
+    return Card(
+        "Hydra's Growth",
+        [ManaPoint([Color.GREEN]), ManaPoint([Color.ANY]), ManaPoint([Color.ANY])],
+        [CardType.PERMANENT_ENCHANTMENT],
+        CardRarity.UNCOMMON
+    )
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    card1 = create_jungle_delver()
+    card2 = create_hydras_growth()
+    print(card1)
+    print()
+    print(card2)
