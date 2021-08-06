@@ -34,12 +34,12 @@ class ManaPoint:
 
 
 class Card:
-    def __init__(self, mana_cost: Set[ManaPoint], types: List[CardType], rarity: CardRarity):
+    def __init__(self, name: str, mana_cost: List[ManaPoint], types: List[CardType], rarity: CardRarity):
+        self.name = name
         self.types = types
         self.rarity = rarity
         self.mana_cost = mana_cost
         self.colors = list(get_colors_from_mana_cost(mana_cost))
-
 
 def get_colors_from_mana_cost(mana_cost: Iterable[ManaPoint]) -> Set[Color]:
     unique_colors = set()
