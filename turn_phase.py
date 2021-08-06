@@ -1,0 +1,16 @@
+from enum import Enum
+
+
+class TurnPhase(Enum):
+    BEGINNING_UNTAP = 0
+    BEGINNING_UPKEEP = 1
+    BEGINNING_DRAW = 2
+    MAIN_FIRST = 3
+    COMBAT_START = 4
+    COMBAT_DECLARE_ATTACKERS = 5
+    COMBAT_DECLARE_BLOCKERS = 6
+    COMBAT_DAMAGE = 7
+    COMBAT_END = 8
+    MAIN_SECOND = 9
+    END = 10
+    END_CLEANUP = 11
