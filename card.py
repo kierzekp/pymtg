@@ -28,6 +28,49 @@ class CardRarity(Enum):
     MYTHIC_RARE = 3
 
 
+class KeywordAbility(Enum):
+    DEATHTOUCH = 2
+    DEFENDER = 3
+    DOUBLE_STRIKE = 4
+    ENCHANT = 5
+    EQUIP = 6
+    FIRST_STRIKE = 7
+    FLASH = 8
+    FLYING = 9
+    HASTE = 10
+    HEXPROOF = 11
+    INDESTRUCTIBLE = 12
+    INTIMIDATE = 13
+    LANDWALK = 14
+    LIFELINK = 15
+    PROTECTION = 16
+    REACH = 17
+    SHROUD = 18
+    TRAMPLE = 19
+    VIGILANCE = 20
+    WARD = 21
+    BANDING = 22
+    RAMPAGE = 23
+    CUMULATIVE_UPKEEP = 24
+    FLANKING = 25
+    PHASING = 26
+    BUYBACK = 27
+    SHADOW = 28
+    CYCLING = 29
+    ECHO = 30
+    HORSEMANSHIP = 31
+    FADING = 32
+    KICKER = 33
+    FLASHBACK = 34
+    MADNESS = 35
+    FEAR = 36
+    MORPH = 37
+    AMPLIFY = 38
+    PROVOKE = 39
+    STORM = 40
+    AFFINITY = 41
+
+
 class ManaPoint:
     def __init__(self, colors: List[Color]):
         self.colors = colors
@@ -40,6 +83,14 @@ class Card:
         self.rarity = rarity
         self.mana_cost = mana_cost
         self.colors = list(get_colors_from_mana_cost(mana_cost))
+
+
+class Ability:
+    def __init__(self, name: str, mana_cost: List[ManaPoint], tapping: bool):
+        self.name = name
+        self.mana_cost = mana_cost
+        self.tapping = tapping
+
 
 def get_colors_from_mana_cost(mana_cost: Iterable[ManaPoint]) -> Set[Color]:
     unique_colors = set()
